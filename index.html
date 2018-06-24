@@ -4,11 +4,13 @@
         <meta charset="utf-8">
         <title>Country search engine</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     </head>
     <body>
         <h1>Country search engine</h1>
-        <button id="search">Search a country</button>
-        <input id="country-name" type="text"/>
+        <input id="country-name" type="text" placeholder="Poland"/>
+        <button id="search"><i class="fas fa-search"></i>  Search a country</button>
         <h2>List of countries</h2>
         <ul id="countries">
             <li>No data</li>
@@ -24,10 +26,10 @@
                 <ul>
                     <li>Capital: {{ capital }}</li>
                     <li>Area: {{ area }}</li>
-                    <li>Currency: {{ currencies }}</li>
                     <li>Population: {{ population }}</li>
                     <li>Region: {{ region }}</li>
                 </ul>
+                <hr>
             </div>
         </script>
         <script src="vendor/mustache.min.js"></script>

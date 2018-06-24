@@ -1,0 +1,9 @@
+body { width: 600px; margin: 0 auto; color: white; background-color: darkgrey; font-family: 'Montserrat', sans-serif; }
+
+#search { padding: 10px; font-size: 20px; font-family: 'Montserrat', sans-serif; border: none; cursor: pointer; }
+
+input { padding: 9px; font-size: 20px; }
+
+.name { color: #000; font-size: 25px; text-decoration: underline; }
+
+#countries { list-style-type: none; }

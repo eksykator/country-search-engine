@@ -1,0 +1,38 @@
+{
+  "name": "learning-git",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init-project": "npm install && mkdirp sass css vendor images js && touch README.md index.html sass/style.scss js/script.js && curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "npm-run-all -p watch:*",
+    "watch:browsersync": "node_modules/.bin/browser-sync start --server --files *.css *.html",
+    "build": "npm run build:clean && npm run build:sass",
+    "build:sass": "node-sass --output-style compact -o css sass",
+    "build:clean": "rimraf css/*.css",
+    "watch:sassautoprefixer": "onchange -d 100 sass/*.scss -- npm run style-change-happend",
+    "style-change-happend": "touch style.css && sass sass/style.scss css/style.css && autoprefixer-cli -o css/style.css css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eksykator/learning-git.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eksykator/learning-git/issues"
+  },
+  "homepage": "https://github.com/eksykator/learning-git#readme",
+  "devDependencies": {
+    "browser-sync": "^2.24.4",
+    "mkdirp": "^0.5.1"
+  },
+  "dependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "node-sass": "^4.9.0",
+    "onchange": "^4.0.0",
+    "rimraf": "^2.6.2"
+  }
+}
