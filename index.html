@@ -13,6 +13,24 @@
         <ul id="countries">
             <li>No data</li>
         </ul>
+        
+        <script id="template" type="x-tmpl-mustache">
+            <div class="country-box">
+                <div class="code"> {{ alpha3Code }} </div>
+                <div class="name"> {{name}} </div>
+            </div>
+            <div class="background-information">
+                <h3>Background information:</h3>
+                <ul>
+                    <li>Capital: {{ capital }}</li>
+                    <li>Area: {{ area }}</li>
+                    <li>Currency: {{ currencies }}</li>
+                    <li>Population: {{ population }}</li>
+                    <li>Region: {{ region }}</li>
+                </ul>
+            </div>
+        </script>
+        <script src="vendor/mustache.min.js"></script>
         <script src="js/script.js"></script>
     </body>
 </html>

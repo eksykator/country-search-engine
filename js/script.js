@@ -20,7 +20,10 @@ function showCountriesList(resp) {
     countriesList.innerHTML = '';
     resp.forEach(function(item) {
         var liElement = document.createElement('li');
-        liElement.innerText = 'Country: ' + item.name + ', capital: ' + item.capital;
+        var countryTemplate = document.getElementById('template').innerHTML;
+        Mustache.parse(countryTemplate);
+        var dataCountry = {name: item.name, capital: item.capital, area: item.area, currency: item.currencies, population: item.population, region: item.region};
+        liElement.innerHTML = Mustache.render(countryTemplate, dataCountry);
         countriesList.appendChild(liElement);
     });
 }
